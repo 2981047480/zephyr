@@ -258,10 +258,12 @@ int search_student_by_number1(int number, list *plist)  //学号查找学生
 	return count;
 }
 
-void addnode(list *plist, item *pitem)          //插
+void addnode(list *plist)          //插
 {
+	item *pitem = NULL;
 	//node *pnode;
-	//node *scan;
+	node *scan;
+	scan = plist;
 	int a, b, score, number;
 	bool c;
 	int count = 1;
@@ -318,10 +320,26 @@ void addnode(list *plist, item *pitem)          //插
 	default:
 		break;
 	}
+	while (plist != NULL)
+	{
+		plist = plist->next;
+	}
+	printf("请输入要添加的姓名\n");
+	scanf_s("%s", &pitem->name, sizeof(pitem->name));
+	printf("请输入学号\n");
+	scanf_s("%d", &pitem->number);
+	printf("请输入数学成绩\n");
+	scanf_s("%d", &pitem->score1);
+	printf("请输入语文成绩\n");
+	scanf_s("%d", &pitem->score2);
+	printf("请输入英语成绩\n");
+	scanf_s("%d", &pitem->score3);
+	copytonode(scan, pitem);
 }
 
-bool addnode1(list *plist, item *pitem)//头插法
+bool addnode1(list *plist)//头插法
 {
+	item *pitem = NULL;
 	node *pnode;
 	node *scan;
 	printf("请输入要添加的姓名\n");
@@ -338,6 +356,7 @@ bool addnode1(list *plist, item *pitem)//头插法
 	pnode = (node *)malloc(sizeof(node));
 	if (pnode == NULL)
 	{
+		free(pnode);
 		return false;
 	}
 	scan = pnode->next;
@@ -383,21 +402,36 @@ void save(list *plist)                          //将链表写入文件
 
 	if (scan->next != NULL)
 	{
-		fprintf(fp, "%s %d %d %d %d\n", scan->Item->name, scan->Item->number, scan->Item->score1, scan->Item->score2, scan->Item->score3);
+		fprintf(fp, "%s %d %d %d %d\n", scan->Item->name, sizeof(scan->Item->name), scan->Item->number, scan->Item->score1, scan->Item->score2, scan->Item->score3);
 	}
 	fclose(fp);
 }
 
-list readfile(FILE *fp, list *plist)                          //从文件中读取链表
+void readfile(list *plist)                          //从文件中读取链表
 {
+	FILE *fp;
 	fp = NULL;
 	fp = fopen("学生信息.txt", "r");
+	list *a;
+	a = (list *)malloc(sizeof(list));
+	a = plist;
+	list *b;
+	b = (list *)malloc(sizeof(list));
 
-	if (fp = NULL)
+	if (fp == NULL)
 	{
 		exit(-1);
 	}
-	fread();
+	fread(b, sizeof(list), 1, fp);
+	while (!feof(fp))
+	{
+		a->next = b;
+		a = b;
+		b = (list *)malloc(sizeof(list));
+	}
+	a->next = NULL;
+	fclose(fp);
+	return;
 }
 
 int ask()
