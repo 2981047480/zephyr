@@ -97,10 +97,15 @@ void travelthelist(list *plist)                 //遍历链表
 	node *scan;
 	scan = plist->next;
 
-	while (scan->next != NULL)
+	while (1)
 	{
-		shownode(scan);
-		scan = scan->next;
+		if (scan->next != NULL)
+		{
+			shownode(scan);
+			scan = scan->next;
+		}
+		else
+			break;
 	}
 }
 
@@ -110,7 +115,9 @@ bool search_student_by_name(char name, list *plist)          //根据名字查找项
 	scanf_s("%s", &name, sizeof(name));
 
 	node *pnode;
-	pnode = plist->next;
+	pnode = (node *)malloc(sizeof(node));
+	intializelist(pnode);
+	plist->next = pnode;
 	while (true)
 	{
 		if (name != plist->Item->name)
@@ -156,12 +163,12 @@ bool search_student_by_score(int score, list *plist) //根据成绩查找学生
 bool search_student_by_number(int number, list *plist)  //学号查找学生
 {
 	node *scan;
-	scan = plist->next;
+	scan = plist;
 	printf("请输入学生学号\n");
 
 	while (true)
 	{
-		if (number == plist->Item->number)
+		if (number == scan->Item->number)
 		{
 			shownode(scan);
 		}
@@ -339,11 +346,14 @@ void addnode(list *plist)          //插
 
 bool addnode1(list *plist)//头插法
 {
-	item *pitem = NULL;
+	// item *pitem= NULL;
+	item *pitem;
 	node *pnode;
 	node *scan;
+	pitem = plist->Item;
 	printf("请输入要添加的姓名\n");
-	scanf_s("%s", &pitem->name, sizeof(pitem->name));
+	//scanf_s("%s", &pitem->name, sizeof(pitem->name));
+	scanf_s("%s", &pitem->name);
 	printf("请输入学号\n");
 	scanf_s("%d", &pitem->number);
 	printf("请输入数学成绩\n");
@@ -393,7 +403,8 @@ void save(list *plist)                          //将链表写入文件
 	FILE *fp;
 	fp = NULL;
 	//char filename[] = "C:\Users\dell\OneDrive\Desktop\学生信息.txt";
-	fp = fopen("学生信息.txt", "W+");
+	//fp = fopen("学生信息.txt", "W+");
+	fp = fopen("argv", "W+");
 
 	if (fp == NULL)
 	{
@@ -402,7 +413,7 @@ void save(list *plist)                          //将链表写入文件
 
 	if (scan->next != NULL)
 	{
-		fprintf(fp, "%s %d %d %d %d\n", scan->Item->name, sizeof(scan->Item->name), scan->Item->number, scan->Item->score1, scan->Item->score2, scan->Item->score3);
+		fprintf(fp, "%s %d %d %d %d\n", scan->Item->name,scan->Item->number, scan->Item->score1, scan->Item->score2, scan->Item->score3);
 	}
 	fclose(fp);
 }
@@ -413,7 +424,7 @@ void readfile(list *plist)                          //从文件中读取链表
 	fp = NULL;
 	fp = fopen("学生信息.txt", "r");
 	list *a;
-	a = (list *)malloc(sizeof(list));
+	//a = (list *)malloc(sizeof(list));
 	a = plist;
 	list *b;
 	b = (list *)malloc(sizeof(list));
@@ -422,7 +433,7 @@ void readfile(list *plist)                          //从文件中读取链表
 	{
 		exit(-1);
 	}
-	fread(b, sizeof(list), 1, fp);
+	/*fread(b, sizeof(list), 1, fp);
 	while (!feof(fp))
 	{
 		a->next = b;
@@ -431,7 +442,7 @@ void readfile(list *plist)                          //从文件中读取链表
 	}
 	a->next = NULL;
 	fclose(fp);
-	return;
+	return;*/
 }
 
 int ask()
@@ -458,4 +469,108 @@ int menu()
 	printf("-----------------------------\n");
 	scanf_s("%d", &a);
 	return a;
+}
+
+bool regist()                               //登陆注册
+{
+	system("cls");
+	FILE *f;
+	FILE *z;
+	f = fopen("账号.txt", "a");
+	z = fopen("密码.txt", "a");
+	if (f==NULL)
+	{
+		exit(-1);
+	}
+	printf("注册登陆系统\n");
+	printf("输入0注册，输入1登陆\n");
+	int input;
+	char user[100], user2[100];
+	char a[100],a2[100]; //密码（不会英语，手动尴尬）
+	
+	while (1)
+	{
+		if (scanf_s("%d", &input, 128) == 1)
+		{
+			if (input == 0)
+			{
+				printf("注册\n");
+				printf("请输入用户名(必须为数字)\n");
+				//scanf("%s", &user);//读用户名
+				//user = getchar();
+				scanf("%s", &user, 128);
+				printf("请输入密码（必须为数字）\n");
+				//scanf("%s", &a);
+				//a = getchar();
+				scanf("%s", &a, 128);
+				/*fprintf(f, "%s",user);
+				fprintf(f, "%s",a);*/
+				//user=fputs(f);
+				//a=fputs(z);
+				fprintf(f, "%s\n", user);
+				fprintf(z, "%s\n",a);
+				/*fputs(user, f);
+				fputs(a, z);*/
+			}
+			if (input == 1)
+			{
+				printf("登陆\n");
+				//fscanf(f, "%s", user);
+				//fscanf(f, "%s", a);
+				//user=fgets(f);
+				//a=fgets(z);
+				fscanf(f, "%s", &user[100]);
+				fscanf(z, "%s", &a[100]);
+				printf("请输入用户名\n");
+				scanf("%s", &user2, 128);//读用户名
+				if (user == user2)
+				{
+					printf("请输入密码\n");
+					scanf("%s", &a2, 128);
+					if (a == a2)
+					{
+						break;
+						return true;
+					}
+					else
+					{
+						printf("密码错误\n");
+						getchar();
+						//return false;
+						exit(-1);
+					}
+				}
+				if (user != user2)
+				{
+					printf("用户名错误\n");
+					//system("pause");
+					//return false;
+					exit(-1);
+				}
+			}
+			else
+			{
+				printf("请输入0或1\n");
+			}
+		}
+		else
+			break;
+	}
+	fclose(f);
+}
+
+void sort(list *plist)                //排序（综合考虑之后，这里用插入排序更好）
+{
+	node *pnew = (node *)malloc(sizeof(node));
+		while (1)
+		{
+			if (plist->next != NULL)
+			{
+				plist = plist->next;
+			}
+			else
+			{
+				break;
+			}
+		}
 }

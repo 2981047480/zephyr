@@ -1,0 +1,5 @@
+import turtle
+
+turtle.pensize(10)
+turtle.circle(100)
+turtle.done()

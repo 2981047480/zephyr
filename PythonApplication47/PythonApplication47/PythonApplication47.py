@@ -1,0 +1,10 @@
+n=int(input('请输入\n'))
+a=n**2
+if(a>50):
+    print(a)
+    while(a>50):
+        n=int(input('请输入\n'))
+        a=n**2
+        print(a)
+else:
+    print(a)
