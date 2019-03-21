@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "判断正负和奇偶性", "判断正负和奇偶性\判断正负和奇偶性.vcxproj", "{041B899D-F98D-497C-81FB-79B4F21B56DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Debug|x64.ActiveCfg = Debug|x64
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Debug|x64.Build.0 = Debug|x64
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Debug|x86.ActiveCfg = Debug|Win32
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Debug|x86.Build.0 = Debug|Win32
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Release|x64.ActiveCfg = Release|x64
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Release|x64.Build.0 = Release|x64
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Release|x86.ActiveCfg = Release|Win32
+		{041B899D-F98D-497C-81FB-79B4F21B56DA}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C272CDE-3F33-4647-8220-168FF95A2F6D}
+	EndGlobalSection
+EndGlobal
