@@ -1,0 +1,24 @@
+print("**ab*c\t*de***\ttg**\n")
+print("h\nn***k")#print语句完了会自动换行
+print('C:\some\name')#这里系统会把\n当作换行来处理，如果不想让他这样，则需要：
+print(r'C:\some\name')#加一个r，告诉系统这个不是转义字符而是原始字符
+c='23+45'
+eval(c)#作用是把字符串的内容作为对应的python语句来执行
+print(eval(c))
+len(c)#返回字符串长度
+s='abcd'
+print(len(s))
+#python 列表中的元素是可以改变的
+mlist=['brenden',45.3,911,'john',32]
+print(mlist)
+print(mlist[0])
+mlist[0]='a'
+print(mlist)
+#元组与列表类似，不同在于元组中的元素不能更改，相当于只读列表
+#空括号代表空元组，当元组只有一个元素时，必须以‘，’结尾
+tuple=()#空元组
+tuple1=(1,)#含有一个元素的元组
+print(tuple1[0])
+#任何一组以逗号分隔的对象，当省略标识序列的括号时，默认为元组，例如：
+s=1,2,3
+print(s)
