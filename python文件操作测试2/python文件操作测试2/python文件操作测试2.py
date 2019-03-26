@@ -1,0 +1,11 @@
+fp=open("C:\\Users\\dell\\Desktop\\样本01.txt","r+")
+a=fp.read()
+fp=open("C:\\Users\\dell\\Desktop\\样本01.txt","w+")
+fp.write(a.replace(' ',','))
+fp.close()
+fp=open("C:\\Users\\dell\\Desktop\\样本01.txt","r+")
+a=fp.read()
+fp=open("C:\\Users\\dell\\Desktop\\样本01.txt","w+")
+fp.write(a.replace('\n',' '))
+
+fp.close()
