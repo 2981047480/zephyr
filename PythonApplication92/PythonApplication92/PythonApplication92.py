@@ -1,9 +1,9 @@
 import re
 
-fp=open('C:\\Users\\dell\\Desktop\\数据.txt','r+',encoding='UTF-8')#打开处理前的数据
+fp=open('C:\\Users\\dell\\Desktop\\任务与资料\\数据.txt','r+',encoding='UTF-8')#打开处理前的数据
 a=fp.read()
 a.replace(',',' ')
-fp1=open('C:\\Users\\dell\\Desktop\\数据1.txt','w+',encoding='UTF-8')#新建文件存储处理后的数据
+fp1=open('C:\\Users\\dell\\Desktop\\任务与资料\\数据1.txt','w+',encoding='UTF-8')#新建文件存储处理后的数据
 a.replace('>',' ')
 a=re.sub(u">","",a)#去除‘>’
 a=re.sub(u",","",a)#去除‘,’
@@ -35,7 +35,9 @@ a=re.sub(u"用水：","",a)
 a=re.sub(u"用电：","",a)
 a=re.sub(u"燃气：","",a)
 a=re.sub(u"采暖：","",a)
-a=re.sub(u"end","",a)
+a=re.sub(u"end","",a)#去掉这些字样
+a=re.sub(u"None","NULL",a)#把'None'换成'NULL'
+#a=re.sub(u"地址和交通","",a)
 a=re.sub(u"    "," ",a)
 a=re.sub(u"   "," ",a)
 a=re.sub(u"   "," ",a)
@@ -47,6 +49,6 @@ a=re.sub(u"  "," ",a)#把所有间距都变成一个空格
 fp1.write(a)
 fp.close()
 fp1.close()
-fp2=open('C:\\Users\\dell\\Desktop\\数据1.txt','r+',encoding='UTF-8')
+fp2=open('C:\\Users\\dell\\Desktop\\任务与资料\\数据1.txt','r+',encoding='UTF-8')
 b=fp2.readlines()
 long=len(b)
