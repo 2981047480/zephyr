@@ -18,24 +18,33 @@ int main(int argc, char *argv[])
 
 void judge(char a[])
 {
-	int i=0,j,k,l;//此处l为下面循环中返回的值，作用是记录最小相同的字符的下标
+	int i=0,len,j=0,k,len1=0,len2=0,l;//j为循环判定条件中的变量
 	while (a[i] != '\0')
 	{
 		i++;
 	}
-	l = i;
-	for (j = 0; j < i; j++)
+	len = i;
+	for (k = j + 1; k < len; k++)
 	{
-		for (k = i; k > j; k--)
+		if (a[k] != a[j])
 		{
-			if (a[j] == a[k]&&k<l)
+			len1++;
+			if (len1 > len2)
 			{
-				l = k;
+				len2 = len1;
 			}
 		}
+		else
+		{
+			/*len1--;
+			len2--;
+			j++;*/
+			len1 = 1;
+			len2 = 1;
+			j++;
+			k = j ;
+		}
 	}
-	for (int b = 0; b < l; b++)
-	{
-		printf("%c", a[b]);
-	}
+
+	printf("%d", len2);
 }
