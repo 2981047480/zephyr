@@ -54,18 +54,29 @@ int main()
 	struct vNode* v7 = (struct vNode*)malloc(sizeof(struct vNode));
 	struct vNode* v9 = (struct vNode*)malloc(sizeof(struct vNode));
 
-	srand(time(NULL));
-	v1->next = v3; v1->value = rand()%100;
-	srand(time(NULL)+1);
-	v3->next = v5; v3->value = rand()%100;
-	srand(time(NULL)+2);
-	v5->next = v7; v5->value = rand()%100;
-	srand(time(NULL)+3);
-	v7->next = v9; v7->value = rand()%100;
-	srand(time(NULL)+4);
-	v9->next = NULL; v9->value = rand()%100;
+	v1->next = v3; v1->value = 1;
+	v3->next = v5; v3->value = 2;
+	v5->next = v7; v5->value = 3;
+	v7->next = v9; v7->value = 4;
+	v9->next = NULL; v9->value = 5;
 
-	v1 = insertIntoSortedList(v1, 98);
+	struct vNode* v2 = (struct vNode*)malloc(sizeof(struct vNode));
+	struct vNode* v4 = (struct vNode*)malloc(sizeof(struct vNode));
+	struct vNode* v6 = (struct vNode*)malloc(sizeof(struct vNode));
+	struct vNode* v8 = (struct vNode*)malloc(sizeof(struct vNode));
+	struct vNode* v10 = (struct vNode*)malloc(sizeof(struct vNode));
+
+	v2->next = v4; v2->value = 1;
+	v4->next = v6; v4->value = 2;
+	v6->next = v8; v6->value = 3;
+	v8->next = v10; v8->value = 4;
+	v10->next = NULL; v10->value = 5;
+
+	v1 = insertIntoSortedList(v1, v2->value);
+	v1 = insertIntoSortedList(v1, v4->value);
+	v1 = insertIntoSortedList(v1, v6->value);
+	v1 = insertIntoSortedList(v1, v8->value);
+	v1 = insertIntoSortedList(v1, v10->value);
 
 	while (v1 != NULL) 
 	{

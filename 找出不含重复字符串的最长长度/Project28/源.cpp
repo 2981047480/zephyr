@@ -24,26 +24,31 @@ void judge(char a[])
 		i++;
 	}
 	len = i;
-	for (k = j + 1; k < len; k++)
+	for (k = j; k < len; k++)
 	{
-		if (a[k] != a[j])
+		len1 = 0;
+		for(j = 0; j < len; j++)
 		{
-			len1++;
-			if (len1 > len2)
+			if (a[k] != a[j])
 			{
-				len2 = len1;
+				len1++;
+				if (len1 > len2)
+				{
+					len2 = len1;
+				}
 			}
+			else
+			{
+				/*len1--;
+				len2--;
+				j++;*/
+				len1--;
+				len2--;
+				//k++;
+				k = j ;
+			} 
 		}
-		else
-		{
-			/*len1--;
-			len2--;
-			j++;*/
-			len1 = 1;
-			len2 = 1;
-			j++;
-			k = j ;
-		}
+		
 	}
 
 	printf("%d", len2);
