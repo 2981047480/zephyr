@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 struct vNode 
 {
@@ -77,6 +76,11 @@ int main()
 	v1 = insertIntoSortedList(v1, v6->value);
 	v1 = insertIntoSortedList(v1, v8->value);
 	v1 = insertIntoSortedList(v1, v10->value);
+
+	while (v1->next != NULL)
+	{
+		v1 = v1->next;
+	}
 
 	while (v1 != NULL) 
 	{

@@ -24,10 +24,10 @@ void judge(char a[])
 		i++;
 	}
 	len = i;
-	for (k = j; k < len; k++)
+	for (k = 0; k < len; k++)
 	{
-		len1 = 0;
-		for(j = 0; j < len; j++)
+		len1 = 1;
+		for(j = k+1; j < len; j++)
 		{
 			if (a[k] != a[j])
 			{
@@ -39,17 +39,11 @@ void judge(char a[])
 			}
 			else
 			{
-				/*len1--;
-				len2--;
-				j++;*/
 				len1--;
 				len2--;
-				//k++;
-				k = j ;
+				break;
 			} 
 		}
-		
 	}
-
 	printf("%d", len2);
 }
