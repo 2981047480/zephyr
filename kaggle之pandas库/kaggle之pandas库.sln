@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "kaggle之pandas库", "kaggle之pandas库\kaggle之pandas库.pyproj", "{85CFC802-189E-4FA1-BC72-DA2231CD3A95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85CFC802-189E-4FA1-BC72-DA2231CD3A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85CFC802-189E-4FA1-BC72-DA2231CD3A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4C9D01A-7C46-4308-90F7-AEFBBE0D303F}
+	EndGlobalSection
+EndGlobal
