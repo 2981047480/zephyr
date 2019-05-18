@@ -31,4 +31,10 @@ print(b.head)
 #这么读的话，可以隐藏前面的第一列的0~某个数
 b.head().to_csv("F:\\任务与资料\\first.csv")
 #在这里尝试过b.head，不带括号的话会报错，同时，这么打开的话相当于用“w”的方法打开这个文件
-           
+reviews=pd.read_csv("F:\\任务与资料\\first.csv",index_col=0,encoding='gbk')
+pd.set_option("display.max_rows",5)
+print("\n")
+print("\n")
+print(pd.set_option("display.max_rows",5))#百度了一下，这句代码用来显示最大列数，后面的5为最大显示列数
+reviews.country
+print(reviews.country)
