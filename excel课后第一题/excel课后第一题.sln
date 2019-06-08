@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "excel课后第一题", "excel课后第一题\excel课后第一题.pyproj", "{B39C19C1-9F54-421A-B312-FE443638A532}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B39C19C1-9F54-421A-B312-FE443638A532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39C19C1-9F54-421A-B312-FE443638A532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1F15AA3-5FB1-4EBE-A055-717E4A729FFD}
+	EndGlobalSection
+EndGlobal

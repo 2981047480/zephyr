@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "3excel_parsing_and_wrote_keep_dates", "3excel_parsing_and_wrote_keep_dates\3excel_parsing_and_wrote_keep_dates.pyproj", "{A7892AB8-97CB-4ED4-863E-79846C075E36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7892AB8-97CB-4ED4-863E-79846C075E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7892AB8-97CB-4ED4-863E-79846C075E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E22205BB-5ED7-4B45-B581-778DE79B50E5}
+	EndGlobalSection
+EndGlobal

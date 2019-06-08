@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "基础python筛选特定行", "基础python筛选特定行\基础python筛选特定行.pyproj", "{836771B2-A14E-49D3-9CB5-F6D4412FC103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{836771B2-A14E-49D3-9CB5-F6D4412FC103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{836771B2-A14E-49D3-9CB5-F6D4412FC103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C636655C-87E0-4ACA-A8F1-D069B99287A3}
+	EndGlobalSection
+EndGlobal
