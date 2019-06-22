@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "matplotlib绘制正弦函数", "matplotlib绘制正弦函数\matplotlib绘制正弦函数.pyproj", "{F52B67BD-33A5-4CC4-AC78-AABE5496E592}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F52B67BD-33A5-4CC4-AC78-AABE5496E592}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52B67BD-33A5-4CC4-AC78-AABE5496E592}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE379FE0-68CD-48C4-BE6C-1EDB08E94D86}
+	EndGlobalSection
+EndGlobal

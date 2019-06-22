@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "数据库更新操作", "数据库更新操作\数据库更新操作.pyproj", "{8B89FA69-E1DE-49F8-B6AA-FE15F432F9F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B89FA69-E1DE-49F8-B6AA-FE15F432F9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B89FA69-E1DE-49F8-B6AA-FE15F432F9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5801673-E977-4D0D-A66C-DF994D8AC7F0}
+	EndGlobalSection
+EndGlobal

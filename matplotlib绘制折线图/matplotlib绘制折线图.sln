@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "matplotlib绘制折线图", "matplotlib绘制折线图\matplotlib绘制折线图.pyproj", "{CF662EB3-7191-4AB3-B225-52031A14CAFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF662EB3-7191-4AB3-B225-52031A14CAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF662EB3-7191-4AB3-B225-52031A14CAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9DB2674-A54D-4E1C-A9F8-D604C2C147BF}
+	EndGlobalSection
+EndGlobal

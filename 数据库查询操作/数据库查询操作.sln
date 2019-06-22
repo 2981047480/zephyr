@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "数据库查询操作", "数据库查询操作\数据库查询操作.pyproj", "{FDCAD7E8-E0BA-4880-B016-4E173388B69C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDCAD7E8-E0BA-4880-B016-4E173388B69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDCAD7E8-E0BA-4880-B016-4E173388B69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FAF9E4A8-3585-4565-8A78-835CF42F590C}
+	EndGlobalSection
+EndGlobal

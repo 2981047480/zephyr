@@ -12,7 +12,8 @@ struct student
 };
 
 typedef struct student * stuNode;
-
+typedef struct student node;
+void save(node *pnode);
 int n = 0;                    //全局变量,记录链表的长度 
 
 stuNode Create();            //创建一个新的链表                     
@@ -201,6 +202,28 @@ int main()
 		scanf("%ld %s", &stu->num, stu->name);
 	}
 	Print(head);
+	save(head);
 	system("pause");
 	return 0;
+}
+
+void save(node *pnode)
+{
+	//char a[30] = 'D:\1.txt';
+	FILE *fp = fopen("D:\1.txt", "r");
+	if (fp == NULL)
+	{
+		printf("无法打开文件\n");
+		system("pause");
+		exit(-1);
+	}
+	node *temp = (node *)malloc(sizeof(node));
+	temp = pnode;
+	while (temp->next != NULL)
+	{
+		fprintf(fp, "%s", temp->name);
+		fprintf(fp, "%d", temp->num);
+		temp = temp->next;
+	}
+	fclose(fp);
 }

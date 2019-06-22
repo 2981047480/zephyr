@@ -1,14 +1,13 @@
-import pymysql.cursors
+#!/usr/bin/python3
 
-#连接MySQL数据库
-connection=pymysql.connect(host='127.0.0.1',port=3306,user='root',password='198876',db='guest',charset='utf8mb4',cursorclass=pymysql.cursors.DictCursor)
+import pymysql
 
-#通过cursor创建游标
-cursor=connection.cursor()
+db=pymysql.connect("localhost","root","","TESTDB")#打开数据库连接
 
-#创建sql语句，并执行
-sql="INSERT INTO `users` (`email`,`password`) VALUES (`huzhiheng@itest.info`,`123456`)"
-cursor.execute(sql)
+cursor=db.cursor()#创建一个游标对象cursor
 
-#提交sql
-connection.commit()
+cursor.execute("SELECT VERSION()")#使用execute（）进行SQL查询,执行结果是MySQL的版本号
+
+data=cursor.fetchone()#获取单条数据
+
+print("Database version : %s " %data)
