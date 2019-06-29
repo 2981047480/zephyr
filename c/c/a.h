@@ -29,3 +29,5 @@ void registered();//注册函数
 void landing();//登陆函数
 void loading();//加载函数
 void save(list pnode);//保存文件
+void readfile(list head);//读文件
+void print(list head);//打印链表

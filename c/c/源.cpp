@@ -4,12 +4,14 @@
 #include<Windows.h>
 #include"a.h"
 #pragma warning(disable:4996)
+const char file[10] = "信息.txt";
 
 int main()
 {
 	system("color f5");
 	list head = (list)malloc(sizeof(node));
 	head->next = NULL;
+	readfile(head);
 	int temp=1;
 	int a=0;//安全起见，这里a设置为0，如果不登陆，就不能进行任何操作
 	while (temp)
@@ -17,14 +19,14 @@ int main()
 		temp = menu1();
 		switch (temp)
 		{
-			case 0: return 0; break;
-			case 1: registered(); break;
+			case 0: return 0; break;//直接退出
+			case 1: registered(); break;//注册
 			case 2: 
 			{
 				landing();
 				a = 1;
 				temp = 0;
-			}; break;
+			}; break;//登陆
 		}
 	}
 	//create(head);//创建链表
@@ -41,6 +43,10 @@ int main()
 			case 4:
 				save(head);
 				break;
+			case 3:
+				print(head);
+				break;
+			
 		
 	}
 	printf("\t\t\t\t\t\t");
@@ -53,8 +59,8 @@ int main()
 
 void create(list head)//创建链表
 {
-	char temp1[20],temp2[10];
-	int r,t;//此处r为ranking,t为times的意思
+	//char temp1[20],temp2[10];
+	//int r,t;//此处r为ranking,t为times的意思
 	//printf("\t\t\t\t\t\t请输入歌曲信息，格式为“歌曲名 歌手名 排名 播放次数”:\n");
 	//printf("\t\t\t\t\t\t");
 	//scanf("%s %s %d %d", temp1, temp2, &r, &t);
@@ -119,7 +125,7 @@ int menu2()//用户选项界面，并获得返回值
 	printf("\t\t\t\t\t\t请选择选项\n");
 	printf("\t\t\t\t\t\t");
 	scanf("%d", &temp);
-	while (temp != 1 && temp != 2 && temp != 3 && temp != 4 && temp != 0)
+	while (temp != 1 && temp != 2 && temp != 3 && temp != 4 && temp != 0 && temp!=5)
 	{
 		safe_flush(stdin);
 		printf("\t\t\t\t\t\t错误的输入，请重新输入\n");
@@ -142,7 +148,7 @@ int menu1()
 	scanf("%d", &flag);
 	while (flag != 1 && flag != 0 && flag != 2)
 	{
-		printf("输入数据有误，请重新输入\n");
+		printf("\t\t\t\t\t\t输入数据有误，请重新输入\n");
 		safe_flush(stdin);
 		printf("\t\t\t\t\t\t");
 		scanf("%d", &flag);
@@ -303,10 +309,144 @@ void save(list head)//保存链表至文件
 	list pnode;
 	pnode = head->next;
 	FILE *fp;
-	fp = fopen("信息.txt", "w");
+	fp = fopen(file, "w");
 	while (pnode != NULL)
 	{
 		fprintf(fp, "%s %s %d %d\n", pnode->name1, pnode->name2, pnode->ranking, pnode->times);
 		pnode = pnode->next;
 	}
+	fclose(fp);
+	printf("\t\t\t\t\t\t保存成功\n");
+}
+
+void readfile(list head)//读文件
+{
+	FILE *fp;
+	list pnode=(list)malloc(sizeof(node));
+	pnode->next = NULL;
+	head->next = pnode;
+	//if (head->next == NULL)//即链表中什么也没有
+	//{
+	//	pnode = (list)malloc(sizeof(node));
+	//	pnode->next = NULL;
+	//	head->next = pnode;
+	//	//pnode = head->next;
+	//}
+	//else
+	//{
+	//	pnode = head->next;
+	//	while (pnode->next != NULL)
+	//	{
+	//		pnode = pnode->next;
+	//	}
+	//	list anode = (list)malloc(sizeof(node));
+	//	anode->next = NULL;
+	//	pnode->next = anode;
+	//	pnode = pnode->next;
+	//}
+	fp = fopen(file, "r");
+	while (feof(fp) == 0)
+	{
+
+		fscanf(fp, "%s %s %d %d\n", pnode->name1, pnode->name2, &pnode->ranking, &pnode->times);
+		list qnode = (list)malloc(sizeof(node));
+		qnode->next = NULL;
+		pnode->next = qnode;
+	}
+	if (feof(fp) != 0)
+	{
+		free(pnode->next);
+		pnode->next = NULL;
+	}
+	fclose(fp);
+}
+
+void print(list head)//打印链表
+{
+	list pnode;
+	if (head->next != NULL)
+	{
+		pnode = head->next;
+		while (pnode != NULL)
+		{
+			printf("\t\t\t\t\t\t%s %s %d %d\n", pnode->name1, pnode->name2, pnode->ranking, pnode->times);
+			pnode = pnode->next;
+		}
+	}
+	else
+	{
+		/*pnode = (list)malloc(sizeof(node));
+		pnode->next = NULL;
+		head->next = pnode;*/
+		printf("\t\t\t\t\t\t当前没有任何信息\n");
+	}
+}
+
+void insert(list head)
+{
+
+}
+
+int search(list head)
+{
+	printf("\t\t\t\t\t\t请输入要查找的项\n");
+	int i=0;
+	char str[30];
+	printf("\t\t\t\t\t\t");
+	scanf("%s", str);
+	while()
+}
+
+void deletenode(list head)
+{
+
+}
+
+void change(list head)
+{
+
+}
+
+list Insert(list head, list newStu)
+{
+	list pnode;
+	list pnode1;
+	list pnode2=(list)malloc(sizeof(node));
+	pnode = newStu;
+	pnode1 = head;
+	//判断链表是否为空,如果是空链表,就将新节点作为第一个节点 
+	if (NULL == head)
+	{
+		head = pnode;
+		pnode->next = NULL;
+	}
+	else
+	{
+		while ((pnode->ranking > pnode1->ranking) && (pnode1->next != NULL))
+		{
+			pnode2 = pnode1;
+			pnode1 = pnode1->next;
+		}
+		//找到一个比新学号大的节点 
+		if (pnode->ranking <= pnode1->ranking)
+		{
+			//判断该节点是否为头节点,如果是,则将新节点设置为头节点 
+			if (pnode1 == head)
+			{
+				head = pnode;
+			}
+			else
+			{
+				pnode2->next = pnode;
+			}
+			pnode->next = pnode1;
+		}
+		else
+		{
+			pnode1->next = pnode;
+			pnode->next = NULL;
+		}
+	}
+	printf("%d 添加成功\n", newStu->ranking);
+	return head;
 }
