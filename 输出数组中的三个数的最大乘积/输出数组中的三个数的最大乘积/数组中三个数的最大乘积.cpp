@@ -4,6 +4,7 @@
 
 int main()
 {
+	system("color f5");
 	printf("请输入要输入的数字的个数\n");
 	int n,max=0;
 	scanf("%d", &n);
