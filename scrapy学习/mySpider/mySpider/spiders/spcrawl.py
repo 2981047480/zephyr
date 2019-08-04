@@ -34,3 +34,12 @@ class SpcrawlSpider(CrawlSpider):
         print(area)
         toward=response.xpath('//p[@class="content__article__table"]/span[4]/text()').extract_first()
         print(toward)
+        local=response.xpath('//div[contains(@class,"bread__nav w1150 bread__nav--empty")]/p/a/text()').extract()
+        print(local)
+        local2=[]
+        for local1 in local:
+            local1=local1.strip('租房网')
+            local1=local1.strip('租房')
+            local1=local1.strip('网')
+            local2.append(local1)
+        print(local2)
