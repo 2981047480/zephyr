@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.757
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "算法题", "算法题\算法题.vcxproj", "{E4AB5F40-5F05-4F99-8DCA-6A91068E0BF6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "求丑数", "求丑数\求丑数.vcxproj", "{56DC8AB6-D747-47BF-969B-2CB1D7E1A6DD}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "用栈实现队列操作", "用栈实现队列操作\用栈实现队列操作.vcxproj", "{29329BA3-6A57-4E63-A49E-B970ECF4B200}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "输入小于某个非负整数的质数的个数", "输入小于某个非负整数的质数的个数\输入小于某个非负整数的质数的个数.vcxproj", "{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{29329BA3-6A57-4E63-A49E-B970ECF4B200}.Release|x64.Build.0 = Release|x64
 		{29329BA3-6A57-4E63-A49E-B970ECF4B200}.Release|x86.ActiveCfg = Release|Win32
 		{29329BA3-6A57-4E63-A49E-B970ECF4B200}.Release|x86.Build.0 = Release|Win32
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Debug|x64.ActiveCfg = Debug|x64
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Debug|x64.Build.0 = Debug|x64
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Debug|x86.ActiveCfg = Debug|Win32
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Debug|x86.Build.0 = Debug|Win32
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Release|x64.ActiveCfg = Release|x64
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Release|x64.Build.0 = Release|x64
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Release|x86.ActiveCfg = Release|Win32
+		{E11EEF16-C29C-4BA4-A119-984CE8B2B78B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

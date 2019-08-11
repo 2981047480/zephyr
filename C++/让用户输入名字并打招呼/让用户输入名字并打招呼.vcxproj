@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{56DC8AB6-D747-47BF-969B-2CB1D7E1A6DD}</ProjectGuid>
-    <RootNamespace>求丑数</RootNamespace>
+    <ProjectGuid>{8C0D6277-67DD-4124-B0DE-DEFC1C055385}</ProjectGuid>
+    <RootNamespace>让用户输入名字并打招呼</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

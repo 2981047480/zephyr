@@ -9,6 +9,7 @@ int main(void)
 	int num = 10, count = 0;
 	printf("请输入一个正整数：\n");
 	//scanf_s("%d", &num,sizeof(int));
+	fflush(stdin);
 	cin >> num;
 	for (int i = 2; i < num; i++)
 	{

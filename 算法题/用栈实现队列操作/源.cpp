@@ -28,17 +28,127 @@ typedef struct Node
 	struct Node *next;
 }node,*list;
 
+list Create();
+bool isempty(list plist);
+void push(list plist1, list plist2);
+void pop(list plist1, list plist2);
+void peek(list plist1, list plist2);
+bool empty(list plist1, list plist2);
 
 int main()
 {
-
+	list head1 = Create();
+	list head2 = Create();//栈1和栈2
+	for (int i = 0; i < 5; i++)
+	{
+		push(head1, head2);
+	}
+	peek(head1, head2);
+	pop(head1, head2);
+	system("pause");
 }
 
 list Create()
 {
 	list plist = (list)malloc(sizeof(node));
-	plist->count = 1;
+	plist->count = -1;
 	plist->next = NULL;
 	return plist;
 }
 
+bool isempty(list plist)
+{
+	if (plist->next = NULL)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+void push(list plist1,list plist2)
+{
+	list plist = (list)malloc(sizeof(node));
+	plist->next = NULL;
+	printf("请输入\n");
+	scanf("%d", &plist1->n);
+	list plist3;
+	if (plist1->count != -1)//栈1中有节点的情况
+	{
+		if (plist2->count != -1)//栈2中有节点的情况
+		{
+			plist3 = plist1;
+			plist1 = plist1->next;
+			plist3->next = plist2;
+			plist3->count = plist2->count + 1;
+			plist2 = plist3;//把原本栈1中的一个元素移到栈2
+			plist->next = plist1;
+			plist1 = plist;
+			plist1->count = -1;//新元素入栈1,此时栈1中只有一个元素，故将count设置为-1
+		}
+		else//栈2中没有节点的情况
+		{
+			plist3 = plist1;
+			plist1 = plist1->next;
+			plist3->next = plist2;
+			plist3->count = -1;
+			plist2 = plist3;//先让栈1中的那个元素入栈2
+			plist->next = plist1;
+			plist->count=-1;
+			plist1 = plist;//让新节点入栈1
+		}
+	}
+	else//栈1中没有节点
+	{
+		plist->next = plist1;
+		plist->count = -1;
+		plist1 = plist;//直接让元素入栈1
+	}
+}
+
+void pop(list plist1,list plist2)
+{
+	if (isempty(plist1) == true)//如果栈1为空
+	{
+		exit(-1);
+	}
+	else//如果栈1有节点
+	{
+		list plist = plist1;
+		plist1 = NULL;//暂时让栈1为空，后面再判断栈2是否为空
+		free(plist);
+		list plist3;
+		if(plist2->count!=-1)//即栈2不为空
+		{
+			plist3 = plist2;
+			plist2 = plist2->next;
+			plist3->next = plist1;
+			plist1 = plist3;
+			plist1->count = -1;
+		}
+		else//即栈2为空
+		{
+			return;
+		}
+	}
+}
+
+void peek(list plist1,list plist2)
+{
+	printf("%d", plist1->n);
+	return;
+}
+
+bool empty(list plist1, list plist2)
+{
+	if (isempty(plist1) == true && isempty(plist2) == true)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
