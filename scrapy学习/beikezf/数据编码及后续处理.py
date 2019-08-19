@@ -22,7 +22,7 @@ with open("b.txt", "r")as f:
     data = f.read()
     list1 = data.split("\n")
     print(len(list1))
-    for i in range(1, 2945):
+    for i in range(1, 3001):
         list2 = list1[i].split(" ")
         set_fangyuan.add(list2[0])
         set_qu.add(list2[2])
@@ -177,13 +177,16 @@ with open("number_rule.txt", "w")as f:
     f.write(str(dict_dianti)+"\n"+str(dict_chewei)+"\n")
     f.write(str(dict_yongshui)+"\n"+str(dict_yongdian)+"\n"+str(dict_ranqi)+"\n"+str(dict_gongnuan)+"\n")
     f.write(str(dict_high)+"\n")
-with open("data_number.txt", "w")as f:
+with open("数字.txt", "w")as f:
     f.write("城市 区 方位 房屋名 大小 租赁方式 朝向 月租 计费方式 几室 几厅 几卫 入住 租期 看房 所在楼层 总楼高 电梯 车位 用水 用电 燃气 供暖 \n")
-    for i in range(1, 2945):
+    for i in range(1, 3001):
         list2 = list1[i].split(" ")
         #print(list2)
-        f.write("4 "+str(dict_qu[list2[2]])+" "+str(dict_fangwei[list2[3]]) + " "+str(dict_fangwuming[list2[4]]) + " ")
-        f.write(str(list2[5])+" 1 ")
+        f.write("3 "+str(dict_qu[list2[2]])+" "+str(dict_fangwei[list2[3]]) + " "+str(dict_fangwuming[list2[4]]) + " ")
+        #f.write(str(list2[5])+" 1 ")
+        list2[6]=list2[6].replace('合租','2')
+        list2[6] = list2[6].replace('整租', '1')
+        f.write(str(list2[5]) + ' ' +str(list2[6])+' ')
         chaoxiang = re.findall("(.*?)/", list2[7])
         if chaoxiang:
             f.write(str(dict_chaoxiang[chaoxiang[0]])+" ")

@@ -2,15 +2,15 @@
 #include<string>
 using namespace std;
 
-int main(void)
+
+int main()
 {
 	string user_name;
-	cout << "please enter your first name:" << endl;
+	cout << "please enter your first name";
 	cin >> user_name;
-	cout << '\n' << "hello," 
-		 << user_name 
-		 << endl 
-		 << "and goodbye";
-	system("pause");
+	cout << '\n'
+		<< "hello,"
+		<< user_name
+		<< "and goodbye!" << endl;
 	return 0;
 }
