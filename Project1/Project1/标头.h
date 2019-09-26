@@ -1,10 +1,11 @@
-typedef struct node
+struct Node
 {
 	int num;
 	char name;
 	int score;
-	node *next;
-}list;
+	Node *next;
+};
 
-
+typedef struct Node node;
+typedef struct Node *list;
 
