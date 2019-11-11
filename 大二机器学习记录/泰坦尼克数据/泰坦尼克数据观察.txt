@@ -1,0 +1,12 @@
+PassengerId：乘客的编号
+Survived：是否存活
+Pclass：某种编号，可能是家住哪个州之类的
+Name：名字
+Sex：性别
+Age：年龄
+SibSp：
+Parch：
+Ticket：票的编号
+Fare：某种系数
+Cabin：
+Embarked：
